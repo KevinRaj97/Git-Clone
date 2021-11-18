@@ -1,0 +1,40 @@
+import scala.util.Random
+
+class ThreeTypesVLVDEF {
+
+   val Random1={
+    println("Calls At eager time")
+    new Random().nextInt()
+
+  }
+
+lazy val Random2={
+    println("Calls At lazy time")
+  new Random().nextInt()
+  }
+
+  def Random3={
+    new Random().nextInt()
+  }
+}
+
+object  main extends  App
+{
+  val  A : ThreeTypesVLVDEF= new ThreeTypesVLVDEF
+  println(" Eager value ")
+  println(A.Random1)
+  println(A.Random1)
+
+  println(" ")
+  println("Lazy value")
+
+  println(A.Random2)
+  println(A.Random2)
+
+  println(" ")
+  println("Def Method")
+
+  println(A.Random3)
+  println(A.Random3)
+
+} 
